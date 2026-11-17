@@ -32,6 +32,9 @@ test("orienta o que fazer antes e diz que não substitui o boletim de ocorrênci
 test("avisa o que a política de privacidade cumpre", () => {
   assert.match(h, /Jotform/);
   assert.match(h, /endereço IP/);
+  assert.match(h, /até 12 meses/);
+  assert.match(h, /palavra-código/);
+  assert.match(h, /href="https:\/\/zethic\.net\/privacidade"/);
 });
 
 test("Instagram ao lado do LinkedIn e página no mapa do site", () => {
