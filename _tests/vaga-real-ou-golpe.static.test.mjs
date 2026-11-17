@@ -12,15 +12,15 @@ test("página do e-book é da marca Jéssica Gessoli, sem script inline", () => 
   assert.match(html, /<link rel="canonical" href="https:\/\/jessicagessoli\.zethic\.net\/vaga-real-ou-golpe\/">/);
 });
 
-test("pedido do guia vai pelo WhatsApp com origem registrada", () => {
-  const ctas = [...html.matchAll(/href="https:\/\/zethic\.net\/fale\?utm_source=([a-z-]+)"/g)].map((m) => m[1]);
-  assert.ok(ctas.length >= 2);
-  assert.ok(ctas.filter((o) => o === "jessicagessoli-vaga").length >= 2);
-  assert.ok(ctas.every((o) => o === "jessicagessoli-vaga" || o === "jessicagessoli-vaga-rh"));
+// 16/11/2026 (Jéssica: "não quero nada na Zethic"): os botões vão direto ao WhatsApp, sem passar por zethic.net/fale.
+const mensagens = [...html.matchAll(/href="https:\/\/wa\.me\/5519981800221\?text=([^"]+)"/g)].map((m) => decodeURIComponent(m[1]));
+test("pedido do guia vai direto pelo WhatsApp, com a mensagem do guia", () => {
+  assert.ok(mensagens.filter((t) => t === "Olá, Jéssica! Vim pelo site e quero o guia grátis Vaga real ou golpe.").length >= 2);
+  assert.doesNotMatch(html, /zethic\.net\/fale/);
 });
 
-test("lead de RH tem origem própria e pedido para encaminhar ao RH", () => {
-  assert.match(html, /href="https:\/\/zethic\.net\/fale\?utm_source=jessicagessoli-vaga-rh"/);
+test("lead de RH tem mensagem própria e pedido para encaminhar ao RH", () => {
+  assert.ok(mensagens.includes("Olá, Jéssica! Li o guia Vaga real ou golpe e quero proteger o recrutamento da minha empresa contra golpes."));
   assert.match(html, /Conhece alguém de RH\? Encaminhe esta página\./);
 });
 
@@ -34,7 +34,7 @@ test("coautoria e perfis do Instagram aparecem", () => {
 
 test("aviso de privacidade do número e link para a política", () => {
   assert.match(html, /O seu número fica só nessa conversa/);
-  assert.match(html, /href="https:\/\/zethic\.net\/privacidade"/);
+  assert.match(html, /href="\/privacidade\/"/);
 });
 
 test("página no sitemap e nos materiais grátis", () => {
@@ -46,7 +46,11 @@ test("sem PME e com Há 18 anos", () => {
   assert.ok(!/\bPME\b|pequena e média empresa/i.test(html));
   assert.match(html, /Há 18 anos/);
 });
-// O PDF do guia fica em zethic.net/assets/docs e é testado no zethic-site.
+test("PDF do guia publicado no site da marca, com links só para ela", () => {
+  const pdf = readFileSync(new URL("../assets/docs/guia-vaga-real-ou-golpe.pdf", import.meta.url));
+  assert.equal(pdf.subarray(0, 5).toString(), "%PDF-");
+  assert.doesNotMatch(pdf.toString("latin1"), /\/URI\s*\(https:\/\/zethic\.net/);
+});
 
 // O endereço antigo zethic.net/vaga-real-ou-golpe e o PDF do direct ficam no zethic-site e são testados lá.
 

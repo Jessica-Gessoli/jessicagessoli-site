@@ -106,8 +106,8 @@ test("currículo de 1 página para baixar em cada idioma", () => {
 
 test("rodapé leva à política de privacidade nas duas versões (agenda pelo Calendly)", () => {
   // 15/10/2026: o agendamento de 30 minutos começa nesta página, e a política 1.9 cobre o Calendly.
-  assert.match(pt, /<footer>[\s\S]*<a href="https:\/\/zethic\.net\/privacidade">política de privacidade<\/a>[\s\S]*<\/footer>/);
-  assert.match(en, /<footer>[\s\S]*<a href="https:\/\/zethic\.net\/privacidade" hreflang="pt-BR">privacy policy<\/a> \(in Portuguese\)[\s\S]*<\/footer>/);
+  assert.match(pt, /<footer>[\s\S]*<a href="\/privacidade\/">política de privacidade<\/a>[\s\S]*<\/footer>/);
+  assert.match(en, /<footer>[\s\S]*<a href="\/privacidade\/" hreflang="pt-BR">privacy policy<\/a> \(in Portuguese\)[\s\S]*<\/footer>/);
 });
 
 // 10/11/2026: a vitrine do topo precisa do script também na versão em inglês.

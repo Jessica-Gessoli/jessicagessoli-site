@@ -166,3 +166,20 @@ test("sites da Jéssica Gessoli e da Pode Curtir levam à Zethic, com a fundador
     assert.match(h, /Jéssica Gessoli é fundadora da Zethic, e você pode contratar a execução com quem preferir\./, p);
   }
 });
+
+// 16/11/2026 (Jéssica: "não quero nada na Zethic. Vamos desvincular tudo"): o site não depende de zethic.net.
+// Fica só a ponte de recomendação (zethic.net/para-o-seu-negocio), que a Jéssica decidiu manter.
+test("nenhum link para zethic.net além da ponte de recomendação", () => {
+  for (const p of paginas) {
+    for (const m of readFileSync(p, "utf8").matchAll(/https?:\/\/zethic\.net(\/[^"' )<]*)?/g)) {
+      assert.match(m[0], /^https:\/\/zethic\.net\/para-o-seu-negocio\?utm_source=jessicagessoli/, p.pathname + ": " + m[0]);
+    }
+  }
+});
+
+test("PDFs da marca sem link para zethic.net", () => {
+  for (const f of readdirSync(new URL("../assets/docs/", import.meta.url))) {
+    const b = readFileSync(new URL("../assets/docs/" + f, import.meta.url)).toString("latin1");
+    assert.doesNotMatch(b, /\/URI\s*\(https?:\/\/zethic\.net/, f);
+  }
+});

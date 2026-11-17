@@ -29,10 +29,19 @@ geradas no `Jessica-Gessoli/zethic-site` e copiadas para cá; isso acabou.
 O QR Code projetado no fim das palestras aponta sempre para https://jessicagessoli.zethic.net/conecte-se/.
 Troque o conteúdo em `conecte-se/index.html`; nunca troque o endereço.
 
-## O que continua no zethic-site
+## Currículo, resume e kit de palestrante
 
-- `zethic.net/jessicagessoli` e `zethic.net/en/jessicagessoli`, que só levam para este site (endereços antigos).
-- A página `zethic.net/fale`, que monta as mensagens de WhatsApp (`?utm_source=jessicagessoli-...`).
-- A política de privacidade `zethic.net/privacidade`, que cobre o Conte o seu golpe e as conversas pelo WhatsApp.
-- A página `zethic.net/para-o-seu-negocio`, para onde este site leva quando recomenda a Zethic.
-- A planilha de pedidos (Apps Script), que atende as três marcas.
+As fontes ficam em `_docs/` (`curriculo.html`, `resume.html`, `kit-palestrante.html`). Para gerar os PDFs de
+`assets/docs/`, abra a página no Chrome e imprima em A4, sem margens e com gráficos de fundo (ou use o Playwright
+com `prefer_css_page_size` e `print_background`).
+
+## Independente da Zethic
+
+Desde 16/11/2026 (Jéssica: "não quero nada na Zethic"), o site não depende de zethic.net: os botões vão direto ao
+WhatsApp (`wa.me/5519981800221`), a política de privacidade é a própria (`/privacidade/`) e os PDFs ficam em
+`assets/docs/`. O único link para zethic.net é a recomendação da Zethic (`zethic.net/para-o-seu-negocio`), sempre
+com "Jéssica Gessoli é fundadora da Zethic". Um teste em `_tests/regras-da-marca.static.test.mjs` impede que outro
+link volte.
+
+Os pedidos e o checkout da loja usam os endereços `FORM_ENDPOINT` e `CHECKOUT_ENDPOINT` de
+`assets/js/jessicagessoli-config.js` (hoje vazios: o pedido segue pelo WhatsApp ou pelo e-mail).
