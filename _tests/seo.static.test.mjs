@@ -45,3 +45,9 @@ test("página inicial fala com o público da marca e declara o site", () => {
   assert.match(h, /name="description" content="[^"]*escritórios de contabilidade, advocacia e RH e para escolas sem TI própria/);
   assert.match(h, /"@type": "WebSite"/);
 });
+
+// 16/11/2026: verificação do Google Search Console (propriedade "Prefixo do URL" https://jessicagessoli.zethic.net/).
+// Não apague: sem este arquivo o Google perde a verificação.
+test("arquivo de verificação do Google Search Console publicado", () => {
+  assert.equal(ler("google664548199044e4af.html"), "google-site-verification: google664548199044e4af.html");
+});
