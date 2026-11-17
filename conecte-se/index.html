@@ -3,12 +3,14 @@
 <head>
 <!-- 16/11/2026 (aprovado pela Jéssica): página permanente de palestras, destino fixo do QR Code do último slide.
      O QR aponta sempre para https://jessicagessoli.zethic.net/conecte-se/ — troque o conteúdo aqui, nunca o endereço.
-     Sem GA4 nesta página: a plateia inclui estudantes menores de idade (LGPD art. 14). -->
+     Sem GA4 nesta página: a plateia inclui estudantes menores de idade (LGPD art. 14).
+     17/11/2026: página de continuidade da palestra "Tecnologia também é lugar para você" (vídeos, downloads e 13 complementos).
+     Vídeos sem botão de download na interface; isso não impede captura. Nunca publicar aqui o PPTX de palco (notas e vídeos offline). -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Conecte-se | Jéssica Gessoli</title>
-<meta name="description" content="Obrigada por participar da palestra. Acompanhe Jéssica Gessoli no Instagram e no LinkedIn e continue aprendendo sobre cibersegurança e IA.">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; img-src 'self'; font-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="description" content="Obrigada por participar da palestra. Assista ao vídeo O futuro já foi ficção, baixe os slides e continue aprendendo sobre cibersegurança e IA.">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; img-src 'self'; media-src 'self'; font-src 'self'; style-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="color-scheme" content="light">
 <meta name="theme-color" content="#12352B">
@@ -27,7 +29,7 @@
 <link rel="icon" href="/assets/img/jessicagessoli-icone.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/spectral-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/ibm-plex-sans-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/css/conecte-se.css?v=dffa963e3e">
+<link rel="stylesheet" href="/assets/css/conecte-se.css?v=233a8e480b">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -95,6 +97,43 @@
     </ul>
   </section>
 
+  <section class="videos" id="videos" aria-labelledby="t-videos">
+    <h2 id="t-videos">O futuro já foi ficção</h2>
+    <p class="intro">Da ficção científica às tecnologias que já fazem parte da nossa realidade. Assista aos vídeos da palestra.</p>
+    <p class="nota">Os dois vídeos contam a mesma história. Escolha o formato que combina com a sua tela.</p>
+    <div class="videos__lista">
+      <figure class="video video--vertical">
+        <video controls preload="none" playsinline controlslist="nodownload" disablepictureinpicture width="720" height="1280" poster="/assets/img/palestra/poster-vertical.jpg" aria-label="O futuro já foi ficção, versão vertical">
+          <source src="/assets/video/o-futuro-ja-foi-ficcao-vertical.mp4" type="video/mp4">
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <figcaption><strong>Versão vertical · Instagram</strong> <span>Assistir aqui · 2 min 31 s · ideal para celular</span></figcaption>
+      </figure>
+      <figure class="video video--horizontal">
+        <video controls preload="none" playsinline controlslist="nodownload" disablepictureinpicture width="960" height="540" poster="/assets/img/palestra/poster-horizontal.jpg" aria-label="O futuro já foi ficção, versão horizontal">
+          <source src="/assets/video/o-futuro-ja-foi-ficcao-horizontal.mp4" type="video/mp4">
+          Seu navegador não consegue reproduzir este vídeo.
+        </video>
+        <figcaption><strong>Versão horizontal · tela cheia</strong> <span>Assistir aqui · 2 min 30 s · ideal para computador e sala de aula</span></figcaption>
+      </figure>
+    </div>
+    <p class="cta-insta"><a href="https://www.instagram.com/jessicagessoli/" target="_blank" rel="noopener noreferrer">Acompanhe os próximos conteúdos no Instagram <span aria-hidden="true">↗</span><span class="sr"> (abre o Instagram em nova aba)</span></a></p>
+  </section>
+
+  <section class="baixar" id="baixar" aria-labelledby="t-baixar">
+    <h2 id="t-baixar">Leve a palestra com você</h2>
+    <p class="intro">Sem cadastro: é só tocar e baixar.</p>
+    <a class="baixar__principal" href="/assets/docs/palestra/jessica-gessoli-palestra-material-completo.pdf" type="application/pdf" download="Jessica-Gessoli-Palestra-Material-Completo.pdf">
+      <span class="baixar__titulo">Baixar material completo em PDF</span>
+      <span class="baixar__info">Slides da palestra e complemento · 41 páginas · 3,9 MB</span>
+    </a>
+    <ul class="baixar__outros">
+      <li><a href="/assets/docs/palestra/jessica-gessoli-palestra-slides.pdf" type="application/pdf" download="Jessica-Gessoli-Palestra-Slides.pdf"><strong>Baixar slides da palestra em PDF</strong> <span>27 páginas · 2,6 MB</span></a></li>
+      <li><a href="/assets/docs/palestra/jessica-gessoli-palestra-slides.pptx" type="application/vnd.openxmlformats-officedocument.presentationml.presentation" download="Jessica-Gessoli-Palestra-Slides.pptx"><strong>Baixar PowerPoint da palestra</strong> <span>27 slides, sem vídeos · 10,5 MB</span></a></li>
+      <li><a href="/assets/docs/palestra/jessica-gessoli-palestra-complemento.pdf" type="application/pdf" download="Jessica-Gessoli-Palestra-Complemento.pdf"><strong>Baixar somente o complemento</strong> <span>PDF · 14 páginas · 1,3 MB</span></a></li>
+    </ul>
+  </section>
+
   <section class="mapa" aria-labelledby="t-mapa">
     <h2 id="t-mapa">Seu próximo passo</h2>
     <p class="intro">O que conversamos na palestra, para você consultar com calma. Ninguém começa pronto: comece pequeno e repita.</p>
@@ -146,6 +185,140 @@
       <p>A aprendizagem profissional é para adolescentes e jovens de 14 a 24 anos (para pessoas com deficiência, não há limite de idade), com formação, prática e contrato com direitos. Vagas não são garantidas: procure sempre os canais oficiais.</p>
       <p><a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/aprendizagem-profissional" target="_blank" rel="noopener noreferrer">Aprendizagem profissional no gov.br</a></p>
     </details>
+  </section>
+
+
+  <section class="complementos" id="complementos" aria-labelledby="t-complementos">
+    <h2 id="t-complementos">Para continuar aprendendo</h2>
+    <p class="intro">Treze slides extras que não couberam no tempo da palestra. Dá para ler tudo aqui, sem baixar nada. Os vídeos de outros veículos abrem no site de quem publicou.</p>
+    <div class="complementos__grupo">
+      <h3>Carreiras e tendências</h3>
+      <figure class="slide" id="complemento-15">
+        <img src="/assets/img/palestra/complemento-15.webp" alt="Slide: O futuro não é só IA. Cinco áreas de carreira e o dado de 39%." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>O futuro não é só IA</h4>
+          <p>O mercado precisa de gente que resolve problemas diferentes. Cinco áreas para explorar: <strong>digital</strong> (IA, dados, software e proteção), <strong>cuidado</strong> (saúde, educação e apoio humano), <strong>engenharia</strong> (robótica, indústria e manutenção), <strong>planeta</strong> (energia, mobilidade e ambiente) e <strong>criatividade</strong> (design, audiovisual e negócios). Segundo uma projeção global, cerca de 39% das habilidades que os trabalhadores têm hoje devem mudar até 2030. As áreas são exemplos, não promessa de vaga.</p>
+          <p class="slide__fontes">Fonte: <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">Fórum Econômico Mundial, Future of Jobs Report 2025</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-15.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-32">
+        <img src="/assets/img/palestra/complemento-32.webp" alt="Slide: Profissões que estão abrindo caminhos, com uma lista do Brasil e uma lista mundial." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Profissões que estão abrindo caminhos</h4>
+          <p>Duas listas diferentes, lado a lado. À esquerda, os cargos que mais cresceram no Brasil segundo o LinkedIn (engenharia de IA, técnico de enfermagem, planejamento financeiro, consultoria regulatória e geofísica). À direita, as funções que empregadores do mundo todo esperam ver crescer até 2030. Crescimento no Brasil não é o mesmo que previsão global, e dado não é promessa de vaga.</p>
+          <p class="slide__fontes">Fontes: LinkedIn, Empregos em Alta 2026 (<a href="https://forbes.com.br/carreira/2026/01/empregos-em-alta-para-2026-linkedin-lista-as-profissoes-que-mais-crescem-no-brasil/" target="_blank" rel="noopener noreferrer">reportagem da Forbes Brasil</a>) e <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">Fórum Econômico Mundial, Future of Jobs Report 2025</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-32.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="complementos__grupo">
+      <h3>Cursos gratuitos e primeiros passos</h3>
+      <figure class="slide" id="complemento-19">
+        <img src="/assets/img/palestra/complemento-19.webp" alt="Slide: Seu primeiro curso pode ser gratuito, com seis plataformas." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Seu primeiro curso pode ser gratuito</h4>
+          <p>Escolha uma plataforma, uma habilidade e crie um pequeno projeto. Antes de se inscrever, confira idade mínima, vagas e certificado no site oficial.</p>
+          <p class="slide__fontes">Plataformas: <a href="https://www.ev.org.br/" target="_blank" rel="noopener noreferrer">Fundação Bradesco</a> · <a href="https://www.netacad.com/courses/introduction-to-cybersecurity" target="_blank" rel="noopener noreferrer">Cisco Networking Academy</a> · <a href="https://www.gov.br/trabalho-e-emprego/pt-br/servicos/mte/programa-escola-do-trabalhador-4.0/programa-escola-do-trabalhador-4.0" target="_blank" rel="noopener noreferrer">Escola do Trabalhador 4.0</a> · <a href="https://www.sp.senai.br/unidade/online" target="_blank" rel="noopener noreferrer">SENAI-SP</a> · <a href="https://loja.sebrae.com.br/aprender-a-empreender-1-372000001028" target="_blank" rel="noopener noreferrer">Sebrae</a> · <a href="https://pt.khanacademy.org/" target="_blank" rel="noopener noreferrer">Khan Academy</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-19.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="complementos__grupo">
+      <h3>Mapas de decolagem e projetos</h3>
+      <figure class="slide" id="complemento-20">
+        <img src="/assets/img/palestra/complemento-20.webp" alt="Slide: Ninguém começa pronto, mapa em seis passos." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Ninguém começa pronto</h4>
+          <p>A carreira começa quando a curiosidade vira prova de aprendizado. Seis passos: <strong>explorar</strong> três áreas, <strong>escolher</strong> um problema, <strong>aprender</strong> uma habilidade com material gratuito, <strong>construir</strong> um projeto pequeno e seguro, <strong>comprovar</strong> mostrando o processo e <strong>abrir portas</strong> com cursos e oportunidades formais. Repetir é evoluir.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-20.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-21">
+        <img src="/assets/img/palestra/complemento-21.webp" alt="Slide: Uma receita, quatro caminhos de primeiro projeto." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Uma receita, quatro caminhos</h4>
+          <p>Escolha um interesse e transforme-o em algo que outra pessoa possa ver: um guia contra golpes digitais (tecnologia e segurança), uma pesquisa curta com fontes sobre um desafio da escola (ciência e cuidado), um esquema para economizar energia (robótica e energia) ou uma campanha educativa (comunicação e negócios). Faça sem expor dados, imagens ou contas de outras pessoas.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-21.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-22">
+        <img src="/assets/img/palestra/complemento-22.webp" alt="Slide: 90 dias podem mudar sua direção, plano em três etapas." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>90 dias podem mudar sua direção</h4>
+          <p><strong>7 dias, descobrir:</strong> conheça três áreas e escolha um problema. <strong>30 dias, fazer:</strong> use um curso gratuito e crie um projeto pequeno. <strong>90 dias, abrir portas:</strong> melhore dois projetos e monte um portfólio simples. Escola, consistência e ética, sem dinheiro fácil e sem atalhos.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-22.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-24">
+        <img src="/assets/img/palestra/complemento-24.webp" alt="Slide: Pense longe, comece pequeno, linha do tempo de agora a cinco anos." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Pense longe, comece pequeno</h4>
+          <p>Uma linha do tempo possível: experimentar áreas até 90 dias, ganhar base de 3 a 12 meses, conhecer cursos técnicos e aprendizagem de 1 a 3 anos e enfrentar desafios maiores de 3 a 5 anos. Os prazos são ilustrativos: cada pessoa tem sua realidade, e mudar de rota também é crescer.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-24.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="complementos__grupo">
+      <h3>Ciência e inovação</h3>
+      <figure class="slide" id="complemento-33">
+        <img src="/assets/img/palestra/complemento-33.webp" alt="Slide: A tecnologia amplia o possível, com fotos de um astronauta e de um foguete." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>A tecnologia amplia o possível</h4>
+          <p>Do espaço às nossas casas, alguém precisou estudar, perguntar e testar. Inovação começa com uma pergunta: aprender, testar, errar, ajustar e tentar de novo.</p>
+          <p class="slide__fontes">Imagens: astronauta (NASA) e foguete, do acervo de exemplos da biblioteca scikit-image.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-33.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-34">
+        <img src="/assets/img/palestra/complemento-34.webp" alt="Slide: Inovação não é mágica, com foto de foguete e imagem do Hubble Deep Field." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Inovação não é mágica</h4>
+          <p>É ciência, engenharia, colaboração e muitas tentativas. Não existe um único futuro: novas tecnologias juntam ciência, criatividade e solução de problemas.</p>
+          <p class="slide__fontes">Imagens: foguete (scikit-image, domínio público) e Hubble Deep Field (NASA/ESA).</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-34.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-35">
+        <img src="/assets/img/palestra/complemento-35.webp" alt="Slide: O futuro não é uma só profissão, com imagem do Hubble Deep Field e foto de astronauta." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>O futuro não é uma só profissão</h4>
+          <p>IA, proteção digital, ciência, vídeo, design e dados. Os limites mudam porque alguém acreditou que era possível. A ciência não elimina os desafios; ela nos ensina a enfrentá-los.</p>
+          <p class="slide__fontes">Imagens: Hubble Deep Field (NASA/ESA) e astronauta (acervo de exemplos da scikit-image).</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-35.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="complementos__grupo">
+      <h3>Fontes e vídeos para aprofundar</h3>
+      <figure class="slide" id="complemento-37">
+        <img src="/assets/img/palestra/complemento-37.webp" alt="Slide: Para saber mais, fontes e caminhos." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Fontes e caminhos</h4>
+          <p>Onde continuar: o programa Jovem Aprendiz, o relatório sobre profissões do futuro e um começo com segurança, com projetos, escola, cursos e orientação responsável.</p>
+          <p class="slide__fontes">Links: <a href="https://www.gov.br/trabalho-e-emprego/pt-br/assuntos/aprendizagem-profissional" target="_blank" rel="noopener noreferrer">Aprendizagem profissional no gov.br</a> · <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2025/" target="_blank" rel="noopener noreferrer">Fórum Econômico Mundial, Future of Jobs Report 2025</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-37.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-38">
+        <img src="/assets/img/palestra/complemento-38.webp" alt="Slide: Tecnologia que impressiona, quatro vídeos de referência." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Tecnologia que impressiona</h4>
+          <p>Quatro vídeos para assistir depois, direto no site de quem publicou: robôs humanoides, interface cérebro-computador e vídeo gerado por IA.</p>
+          <p class="slide__fontes">Assista na fonte: <a href="https://record.r7.com/domingo-espetacular/video/voce-viu-essa-robo-humanoide-impressiona-com-habilidades-de-super-forca-e-agilidade-02112026/" target="_blank" rel="noopener noreferrer">Robô humanoide de resgate (Record, nov/2026)</a> · <a href="https://www.euronews.com/video/2026/11/13/portugal-humanoid-robots-take-centre-stage-at-web-summit-2026" target="_blank" rel="noopener noreferrer">Robôs no Web Summit (Euronews, nov/2026, em inglês)</a> · <a href="https://videonest.co/benzinga/videos/2359688/neuralink-als-patient-says-i-love-you-SmEXXDgJko" target="_blank" rel="noopener noreferrer">Comunicação por interface cerebral (Benzinga, nov/2026, em inglês)</a> · <a href="https://www.youtube.com/watch?v=KhcwvoJiP3I" target="_blank" rel="noopener noreferrer">Demonstração do Veo 3 (Google DeepMind, YouTube)</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-38.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+      <figure class="slide" id="complemento-39">
+        <img src="/assets/img/palestra/complemento-39.webp" alt="Slide: Quando o vídeo pode enganar, reportagens sobre vídeos e vozes falsos." width="1201" height="675" loading="lazy" decoding="async">
+        <figcaption>
+          <h4>Quando o vídeo pode enganar</h4>
+          <p>Reportagens que ajudam a separar registro real de conteúdo feito com IA. Vídeo ou áudio convincente não substitui verificação.</p>
+          <p class="slide__fontes">Leia e assista na fonte: <a href="https://record.r7.com/balanco-geral/video/golpe-com-videos-de-dinossauros-falsos-acende-alerta-sobre-riscos-da-ia-entenda-24082026/" target="_blank" rel="noopener noreferrer">Golpe com dinossauros falsos (Record, ago/2026)</a> · <a href="https://record.r7.com/fala-brasil/video/fraudes-com-voz-clonada-por-inteligencia-artificial-aumentam-no-brasil-04072026/" target="_blank" rel="noopener noreferrer">Fraudes com voz clonada (Record, jul/2026)</a> · <a href="https://www.aosfatos.org/noticias/videos-ia-imitam-estetica-telejornais-enganar-usuarios-tiktok/" target="_blank" rel="noopener noreferrer">Telejornais falsos no TikTok (Aos Fatos, fev/2026)</a> · <a href="https://www.cnnbrasil.com.br/nacional/brasil/como-identificar-videos-feitos-com-ia-e-evitar-golpes/" target="_blank" rel="noopener noreferrer">Como identificar vídeos feitos com IA (CNN Brasil, out/2026)</a> · <a href="https://www.youtube.com/watch?v=fiFWKnFa7xA" target="_blank" rel="noopener noreferrer">Como detectar imagens e vídeos de IA (BBC Verify, em inglês)</a>.</p>
+          <p class="slide__ampliar"><a href="/assets/img/palestra/complemento-39.webp">Ver o slide em tamanho grande</a></p>
+        </figcaption>
+      </figure>
+    </div>
   </section>
 
   <section class="aprender" aria-labelledby="t-aprender">

@@ -115,3 +115,48 @@ h1{font:500 clamp(2.2rem,8vw,3.2rem)/1.05 var(--serif);margin:0 0 .75rem;letter-
 .nota{font-size:.88rem;color:var(--neblina)}
 .grupo .nota{margin:.5rem 0 0}
 @media (min-width:48rem){.mapa{max-width:44rem}}
+
+/* Vídeos, downloads e complementos da palestra (17/11/2026) */
+.videos,.baixar,.complementos{max-width:34rem;margin:0 auto;padding:2.5rem 1.25rem 0}
+.videos h2,.baixar h2,.complementos h2{font:500 1.7rem/1.2 var(--serif);color:var(--garrafa);margin:0 0 .4rem}
+.videos .intro{margin-bottom:.4rem}
+.videos .nota{margin:0 0 1.25rem}
+.videos__lista{display:grid;gap:1.25rem}
+.video{margin:0;background:var(--garrafa);border-radius:12px;padding:.6rem;border:1px solid var(--latao)}
+.video video{display:block;width:100%;height:auto;border-radius:8px;background:#0b1f19}
+.video--vertical video{max-height:80vh;max-height:80svh;width:auto;max-width:100%;margin:0 auto;aspect-ratio:9/16}
+.video--horizontal video{aspect-ratio:16/9}
+.video figcaption{padding:.75rem .4rem .3rem;color:var(--porcelana)}
+.video figcaption strong{display:block;font:500 1.15rem/1.3 var(--serif)}
+.video figcaption span{display:block;font-size:.88rem;color:#C9D8CF}
+.cta-insta{margin:1.25rem 0 0;text-align:center}
+.cta-insta a{display:inline-block;padding:.7rem 1.1rem;border:1px solid var(--latao);border-radius:999px;color:var(--garrafa);font-weight:600;text-decoration:none}
+.cta-insta a:hover{background:var(--branco);border-color:var(--garrafa)}
+.baixar .intro{margin-bottom:1rem}
+.baixar__principal{display:block;padding:1.1rem 1.25rem;border-radius:10px;background:var(--garrafa);color:var(--porcelana);text-decoration:none;border:1px solid var(--garrafa);box-shadow:0 8px 24px rgba(18,53,43,.12)}
+.baixar__principal:hover{border-color:var(--latao-claro)}
+.baixar__titulo{display:block;font:500 1.3rem/1.25 var(--serif)}
+.baixar__titulo::before{content:"↓ ";color:var(--latao-claro)}
+.baixar__info{display:block;font-size:.9rem;color:#C9D8CF;margin-top:.2rem}
+.baixar__outros{list-style:none;margin:.85rem 0 0;padding:0;display:grid;gap:.6rem}
+.baixar__outros a{display:block;padding:.85rem 1.1rem;border-radius:10px;background:var(--branco);border:1px solid var(--pedra);text-decoration:none}
+.baixar__outros a:hover{border-color:var(--latao)}
+.baixar__outros strong{display:block;color:var(--garrafa);font-weight:600}
+.baixar__outros span{display:block;font-size:.88rem;color:var(--neblina)}
+.complementos{padding-bottom:0}
+.complementos__grupo{margin:0 0 2rem}
+.complementos__grupo h3{font:600 .75rem var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--latao-texto);margin:0 0 .75rem;padding-top:.75rem;border-top:2px solid var(--latao)}
+.slide{margin:0 0 1.25rem;background:var(--branco);border:1px solid var(--pedra);border-radius:10px;overflow:hidden}
+.slide img{width:100%;aspect-ratio:1201/675;background:var(--garrafa)}
+.slide figcaption{padding:.9rem 1.1rem 1rem}
+.slide h4{font:500 1.2rem/1.3 var(--serif);color:var(--garrafa);margin:0 0 .35rem}
+.slide p{margin:0 0 .5rem;font-size:.96rem}
+.slide .slide__fontes{font-size:.86rem;color:var(--neblina)}
+.slide a{color:var(--garrafa);font-weight:600;text-decoration-color:var(--latao);text-underline-offset:3px}
+.slide .slide__ampliar{margin:0;font-size:.86rem}
+@media (min-width:48rem){
+  .videos,.baixar,.complementos{max-width:44rem}
+  .video--horizontal{order:-1}
+  .video--vertical{width:100%;max-width:24rem;justify-self:center}
+  .baixar__outros{grid-template-columns:repeat(3,1fr)}
+}
