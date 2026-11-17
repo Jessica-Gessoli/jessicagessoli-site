@@ -178,7 +178,9 @@ test("nenhum link para zethic.net além da ponte de recomendação", () => {
 });
 
 test("PDFs da marca sem link para zethic.net", () => {
-  for (const f of readdirSync(new URL("../assets/docs/", import.meta.url))) {
+  // Inclui subpastas (ex.: assets/docs/palestra/, materiais da palestra desde 17/11/2026).
+  for (const f of readdirSync(new URL("../assets/docs/", import.meta.url), { recursive: true })) {
+    if (!f.endsWith(".pdf")) continue;
     const b = readFileSync(new URL("../assets/docs/" + f, import.meta.url)).toString("latin1");
     assert.doesNotMatch(b, /\/URI\s*\(https?:\/\/zethic\.net/, f);
   }
