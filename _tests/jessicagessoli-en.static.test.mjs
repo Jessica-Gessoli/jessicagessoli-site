@@ -60,7 +60,8 @@ test("nível de cargo: sem promessa de diretoria ou conselho como alvo", () => {
 });
 
 test("sitemap lista a versão em inglês", () => {
-  assert.match(sitemap, /<loc>https:\/\/jessicagessoli\.zethic\.net\/en\/<\/loc>/);
+  // 10/11/2026 (Jéssica): o endereço oficial no Google é o subdomínio da marca; a cópia em zethic.net aponta para ele.
+  assert.match(readFileSync(new URL("../sitemap.xml", import.meta.url), "utf8"), /<loc>https:\/\/jessicagessoli\.zethic\.net\/en\/<\/loc>/);
 });
 
 test("descrição até 160 caracteres e imagem de compartilhamento 1200x630 nas duas versões", () => {
@@ -90,6 +91,7 @@ test("ProfilePage válido nas duas versões", () => {
     assert.equal(j["@type"], "ProfilePage");
     assert.equal(j.mainEntity["@type"], "Person");
   }
+  // O llms.txt é da Zethic e é testado no zethic-site.
 });
 
 test("currículo de 1 página para baixar em cada idioma", () => {

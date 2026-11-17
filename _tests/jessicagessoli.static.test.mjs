@@ -39,6 +39,28 @@ test("publicações citadas com fonte verificável nas duas versões", () => {
   }
 });
 
+test("capítulo da LabLivro no prelo, nas duas versões, com título do livro e link para o site da LabEditora", () => {
+  // 29/10/2026: título conforme o site da LabEditora (livro "em revisão dos capítulos"); link pedido pela Jéssica.
+  // O ano entra quando o livro for publicado.
+  const en = readFileSync(new URL("../en/index.html", import.meta.url), "utf8");
+  const casos = [
+    [html, "publicacoes", /<dt>Capítulo de livro, no prelo<\/dt>\s*<dd><strong>Do risco técnico à decisão executiva<\/strong>/,
+      /“Solidão no Trabalho: reflexões sobre as experiências no mundo profissional”, do selo LabLivro, da LabEditora\./,
+      /<a href="https:\/\/labeditora\.labcarreiras\.com\.br\/" rel="noopener">Site da LabEditora<\/a>/],
+    [en, "publications", /<dt>Book chapter, forthcoming<\/dt>\s*<dd><strong>From technical risk to executive decision<\/strong>/,
+      /“Loneliness at Work: reflections on experiences in the professional world”, from the LabLivro imprint of LabEditora\./,
+      /<a href="https:\/\/labeditora\.labcarreiras\.com\.br\/" rel="noopener" hreflang="pt-BR">LabEditora website<\/a>/],
+  ];
+  for (const [pagina, id, item, livro, link] of casos) {
+    const bloco = pagina.match(new RegExp(`<div id="${id}"[\\s\\S]*?</dl>`))?.[0] ?? "";
+    assert.match(bloco, item);
+    const capitulo = bloco.match(/<div>\s*<dt>(?:Capítulo de livro|Book chapter)[\s\S]*?<\/div>/)?.[0] ?? "";
+    assert.match(capitulo, livro);
+    assert.match(capitulo, link);
+    assert.equal((capitulo.match(/<a /g) ?? []).length, 1, "só o link da LabEditora no capítulo");
+  }
+});
+
 // 21/10/2026 (decisão da Jéssica, mesma regra da Pode Curtir): a categoria aparece no topo, antes do nome.
 test("página profissional: categoria clara acima do nome, em português e em inglês", () => {
   const pt = readFileSync(new URL("../index.html", import.meta.url), "utf8");
