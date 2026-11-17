@@ -62,7 +62,7 @@ test("o 0769 não aparece no site", () => {
   for (const p of paginas) assert.doesNotMatch(readFileSync(p, "utf8"), /98331|0769|5519983310769/, p.pathname);
 });
 
-// O /fale da Zethic tem a mesma lista de moedas; o zethic-site confere a cópia de lá.
+// A mensagem do resultado no WhatsApp usa os nomes desta lista (16/11/2026: montada na própria página, sem o /fale).
 test("moedas da autoavaliação, na ordem combinada com o /fale", () => {
   const d = ler("diagnostico/index.html");
   assert.deepEqual([...d.matchAll(/\{ nome: "([^"]+)"/g)].map((m) => m[1]), MOEDAS);
@@ -164,5 +164,53 @@ test("sites da Jéssica Gessoli e da Pode Curtir levam à Zethic, com a fundador
     const h = ler(p);
     assert.match(h, /https:\/\/zethic\.net\/para-o-seu-negocio\?utm_source=jessicagessoli/, p);
     assert.match(h, /Jéssica Gessoli é fundadora da Zethic, e você pode contratar a execução com quem preferir\./, p);
+  }
+});
+
+// 16/11/2026 (Jéssica: "não quero nada na Zethic. Vamos desvincular tudo"): o site não depende de zethic.net.
+// Fica só a ponte de recomendação (zethic.net/para-o-seu-negocio), que a Jéssica decidiu manter.
+test("nenhum link para zethic.net além da ponte de recomendação", () => {
+  for (const p of paginas) {
+    for (const m of readFileSync(p, "utf8").matchAll(/https?:\/\/zethic\.net(\/[^"' )<]*)?/g)) {
+      assert.match(m[0], /^https:\/\/zethic\.net\/para-o-seu-negocio\?utm_source=jessicagessoli/, p.pathname + ": " + m[0]);
+    }
+  }
+});
+
+test("PDFs da marca sem link para zethic.net", () => {
+  for (const f of readdirSync(new URL("../assets/docs/", import.meta.url))) {
+    const b = readFileSync(new URL("../assets/docs/" + f, import.meta.url)).toString("latin1");
+    assert.doesNotMatch(b, /\/URI\s*\(https?:\/\/zethic\.net/, f);
+  }
+});
+
+// Antes em marcas-regras.static.test.mjs do zethic-site.
+test("Símbolo: monograma JG", () => {
+  const jg = ler("assets/img/jessicagessoli-icone.svg");
+  assert.match(jg, /fill="#12352B"/);
+  assert.doesNotMatch(jg, /<text/, "letras em contorno, não dependem de fonte instalada");
+});
+
+// 11/10/2026 (antes em instagram-junto-linkedin e zethic-institucional do zethic-site): currículos e kit.
+for (const arquivo of ["_docs/kit-palestrante.html", "_docs/curriculo.html", "_docs/resume.html"]) {
+  test(`${arquivo}: cada menção ao LinkedIn pessoal tem o Instagram ao lado`, () => {
+    const texto = ler(arquivo);
+    const linkedin = (texto.match(LINKEDIN) ?? []).length;
+    const instagram = (texto.match(INSTAGRAM) ?? []).length;
+    assert.ok(linkedin > 0, "o arquivo não cita o LinkedIn pessoal");
+    assert.ok(instagram >= linkedin, `LinkedIn ${linkedin} vez(es), Instagram ${instagram} vez(es)`);
+  });
+  test(`${arquivo}: sem a Zethic como cargo e sem zethic.net/fale`, () => {
+    const h = ler(arquivo);
+    assert.doesNotMatch(h, /zethic\.net\/fale/);
+    assert.doesNotMatch(h.replace(/zethic\.net/g, ""), /Zethic|Fundadora|Founder/);
+  });
+}
+
+test("cadernos Copia e Cola e Prompt Joia levam ao site da marca", () => {
+  for (const f of ["caderno-copia-e-cola.pdf", "caderno-prompt-joia.pdf"]) {
+    const pdf = readFileSync(new URL(`../assets/docs/${f}`, import.meta.url)).toString("latin1");
+    assert.match(pdf, /jessicagessoli\.zethic\.net\/diagnostico\//, f);
+    assert.match(pdf, /jessicagessoli\.zethic\.net\/teste-ia\//, f);
   }
 });

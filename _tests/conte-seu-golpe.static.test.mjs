@@ -28,13 +28,16 @@ test("orienta o que fazer antes e diz que não substitui o boletim de ocorrênci
   assert.match(h, /Conteste o Pix no aplicativo do banco/);
 });
 
-// A política que cobre o Conte o seu golpe é a da Zethic (zethic.net/privacidade); o conteúdo dela é testado no zethic-site.
+// 16/11/2026 (Jéssica: "não quero nada na Zethic"): a política do próprio site cobre o Conte o seu golpe.
 test("avisa o que a política de privacidade cumpre", () => {
   assert.match(h, /Jotform/);
   assert.match(h, /endereço IP/);
   assert.match(h, /até 12 meses/);
   assert.match(h, /palavra-código/);
-  assert.match(h, /href="https:\/\/zethic\.net\/privacidade"/);
+  assert.match(h, /href="\/privacidade\/"/);
+  const pol = ler("privacidade/index.html");
+  for (const t of [/Conte o seu golpe/, /Jotform/, /endereço IP/, /até 12 meses/, /palavra-código/, /Calendly/]) assert.match(pol, t);
+  assert.match(pol, /não são enviadas nem guardadas/);
 });
 
 test("Instagram ao lado do LinkedIn e página no mapa do site", () => {
