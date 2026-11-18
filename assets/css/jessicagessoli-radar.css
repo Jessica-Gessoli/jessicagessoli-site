@@ -1,0 +1,20 @@
+/* Radar Digital: newsletter da Jéssica Gessoli publicada também no site (/jessicagessoli/radar/).
+   Usa o layout .doc de jessicagessoli-loja.css. */
+.radar h2{font-size:1.35rem}
+.radar-capa{margin:1.25rem 0 1.5rem}
+.radar-capa img{width:100%;border-radius:2px}
+.radar-intro{font-size:1.1rem;color:var(--neblina);max-width:60ch}
+.assinar{background:var(--branco,#fff);border:1px solid var(--linha);border-left:3px solid var(--latao);border-radius:.25rem;padding:1.1rem 1.25rem;margin:2rem 0}
+.assinar p{margin:0}
+.assinar-acoes{display:flex;flex-wrap:wrap;align-items:center;gap:.75rem 1.5rem;margin-top:.9rem!important}
+.radar-fontes{font-size:.95rem}
+.radar-anterior{color:var(--neblina);font-size:.95rem;margin-top:1.5rem}
+.radar-lista{list-style:none;padding:0!important;margin:1rem 0 0;display:grid;gap:1.75rem}
+.radar-lista li+li{margin-top:0}
+.radar-item{display:grid;grid-template-columns:14rem minmax(0,1fr);grid-template-rows:auto auto 1fr;column-gap:1.5rem;row-gap:.3rem;text-decoration:none;color:var(--tinta);padding-top:1.5rem;border-top:1px solid var(--linha)}
+.radar-item img{grid-row:1 / span 3;border-radius:2px}
+.radar-meta{font:600 .78rem/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--latao-texto)}
+.radar-titulo{font:400 1.45rem/1.2 var(--serif);color:var(--garrafa)}
+.radar-item:hover .radar-titulo{text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:.2em}
+.radar-resumo{color:var(--neblina);font-size:.98rem}
+@media (max-width:40rem){.radar-item{grid-template-columns:1fr}.radar-item img{grid-row:auto;margin-bottom:.6rem}}

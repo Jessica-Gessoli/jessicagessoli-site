@@ -14,6 +14,7 @@ geradas no `Jessica-Gessoli/zethic-site` e copiadas para cá; isso acabou.
 | Loja, pedido recebido, termos, privacidade, desistência, cancelamento | `loja/`, `loja/obrigado/`, `termos/`, `privacidade/`, `desistencia/`, `cancelamento/` |
 | Checkup, diagnóstico, testes e materiais grátis | `checkup/`, `diagnostico/`, `teste-golpe/`, `teste-ia/`, `copia-e-cola/`, `checklist-antigolpe/`, `vaga-real-ou-golpe/`, `conte-seu-golpe/`, `entre-os-times/` |
 | Página das palestras (destino fixo do QR Code) | `conecte-se/` |
+| Radar Digital (newsletter): índice e edições | `radar/`, passo a passo em `_docs/RADAR-PUBLICACAO.md` |
 | Estilo e scripts | `assets/css/`, `assets/js/` |
 | Fotos, PDFs e fontes | `assets/img/`, `assets/docs/`, `assets/fonts/` |
 | Testes | `_tests/` |
